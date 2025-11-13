@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar";
 import ProductComponent from "./ProductComponent";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
     <div>
       <Navbar />
-      <ProductComponent />
+      <Outlet />
     </div>
   );
 };

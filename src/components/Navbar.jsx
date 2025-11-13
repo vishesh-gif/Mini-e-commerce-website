@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
   return (
@@ -9,8 +10,15 @@ const Navbar = () => {
         alt="logo"
       />
       <ul className="flex gap-10 text-lg">
-        <li className="cursor-pointer">Home</li>
-        <li className="cursor-pointer">Cart</li>
+        <li className="cursor-pointer">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link to="/wishList">Wish List</Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link to="/cart">Cart</Link>
+        </li>
         <li>
           <CgProfile className=" text-2xl cursor-pointer" />
         </li>
