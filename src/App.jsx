@@ -7,6 +7,11 @@ import ProductComponent from "./components/ProductComponent";
 import WishList from "./pages/WishList";
 import Cart from "./pages/Cart";
 import { RouterProvider } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails";
+import Checkout from "./pages/Checkout";
+import { Toaster } from "react-hot-toast";
+import Profile from "./pages/Profile";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -16,16 +21,16 @@ function App() {
         { path: "/", element: <ProductComponent /> },
         { path: "/wishList", element: <WishList /> },
         { path: "/cart", element: <Cart /> },
+        { path: "/productDetails/:id", element: <ProductDetails /> },
+        { path: "/checkOut", element: <Checkout /> },
+        { path: "/profile", element: <Profile /> },
       ],
     },
   ]);
   return (
     <Provider store={appStore}>
-      <RouterProvider router={router}>
-        <div>
-          <Body />
-        </div>
-      </RouterProvider>
+      <Toaster position="bottom-right" />
+      <RouterProvider router={router} />
     </Provider>
   );
 }
